@@ -1,21 +1,21 @@
-artifacts_root: artifacts
-
 data_ingestion:
-  root_dir: artifacts/data_ingestion
-  main_folder_id: 1RFTdV4WCu9o489_I4tkELAiRjEssCl2Q
-  local_data_file: artifacts/data_ingestion/data.zip
-  unzip_dir: artifacts/data_ingestion
+  root_dir: 'path_to_root_directory'
+  source_url: 'url_to_data_source'
+  local_data_file: 'path_to_local_data_file'
+  unzip_dir: 'path_to_unzip_directory'
 
 google_drive:
-  credentials_info: 
-    type: "service_account"
-    project_id: "deductive-smile-428006-v6"
-    private_key_id: "32a3c7953f0950e519291cc251ba24b94617187c"
-    private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCyx9PcATF2pCfE\nItYpO+Ug/3EDLjJD/s1+jL+KLSo9t75AeIW2QEMeuM4AtdstsZKEbF2Hc8utQx8B\n5MCZg9RvTR2oJ4c6YXcdwHUbZ5yXrjeQfxRZfBJQGxsG6AesxI9I6LGiW4QMla+O\nQrJxRECpK+C670KmqfmCSq4OB64R1aHp2u2LBtdBK6gF6NBJajSQaXmbFmfBwXY4\nkHEoeK3J3h9PxOdVQEgjvby3wrAAMzePwl0CpSNA3iY7tUwKSoTf1o5GhZEngLEA\nzQexI0iTY0Kcl4pp0YhAudsq4apyLssd3KFUKOnLMLtd5xJhLIDEEEktH8BbBREv\nSIkNCcJdAgMBAAECggEAJdRh0IZSHJwsq/SBI5WAbOSQWc9vJHMosXP/3bGj5A5a\nzBKUnJVpfnk1YfIZMEiIS8wQWGaYvQ9cYs6wMGu0Sl7jfR7sHt7b0ShVv1hDyta6\n/DDfsfWufFPX+rSjVxv6g791QvkhbnZIAQ686nm6QvG9amDRVinWWYsK3H4kh7I0\ntha1KAdllBwQSJcYRE7Lk6o6yol9UUa3I46IpoSd4FXg7Iecd1w4mLuwf5c5EoUr\nOWVFvcMviWxrF1MLbJUuwOHXlZf6ITTZ082k4hyHgXgV15T5XYrZqKVV4grYcQOV\n7Mttnyh2L2kkC4425dwr94UEjWwIafPVsbbmbTib8wKBgQD4W3U0nzJlFWFyV5bC\nO8FKGi3iRhoblZ1fOrknd/yVt87Oa04K4yuG9uMwn5HVkswwCoSsVudlt2ELuXjl\n6PgyQqnFjJasOXj3xP77px9Kcn9Mz7MzAMalZKsk6Ta1hMS7TJA+KI9xB0llHvoZ\neg+eecmjTV0+gc8D2G+8ei5mowKBgQC4SD/M05AJ89yD4r28ukz1Fii3VmIjHunZ\nRfjO48DvVqdxj1L7vJDBC/0lpKbzaLfhrOc8xpDGRE8eTEFQZl7vKD6sQJUZPkcr\n43QrQp3sPYe3hWEwt4qg7aHEZkLqAF0KATcTjIPk9tR4nZFHujmaMtmXdSPXxddw\nkCot527C/wKBgQC3NAAJiUXLezIe/q2fKiUzXIxsVfn8Tyl/jfn3O3N/nc9YRZ+U\nOG9rZ8O/onYZbehhp+CmoJShW9yioXalYm1z5ekGaObctKifXRoa2PUkHcH6D1zJ\nStE+QDxfRgmtbPsSjy/4KkNlxVJG3crv8DKFXKF5bSBTc74ZwBbsmdSQsQKBgFwM\nAoot1pGSFEBwHjPJnq0Az3+cD1LZmxbi4397taAW2XZYj6ucKXWzplOKJbYJRWfc\n9Hef+yp9bkOE9U7Sg3LT2FIzxAWi3OvoJduB393jcgnR/pTV6NGvQJEYPy4g1lgr\n+TWzhyHzxHcmxS1dsG38HkGPykJ52L2p1Neu9N1DAoGBAIqxtqJjzyv6B/JqLWOL\nbF8LFo7VsD50XkTKrBwjfUGV0HattuTdtBE37ekgbNvZh58uKkWhqbJAU6czARAE\nyf5Fxv5wRkFCDFzeADOqMaXPPFMzVI+g57nQqkk0WbNMRIGJKZ1b0Wuxq89+ycwi\nE+oZC/C+IxWxZGstRyklItN8\n-----END PRIVATE KEY-----\n"
-    client_email: "drive-api@deductive-smile-428006-v6.iam.gserviceaccount.com"
-    client_id: "110633217942673347222"
-    auth_uri: "https://accounts.google.com/o/oauth2/auth"
-    token_uri: "https://oauth2.googleapis.com/token"
-    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
-    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/drive-api@deductive-smile-428006-v6.iam.gserviceaccount.com"
-    universe_domain: "googleapis.com"
+  credentials_info:
+    type: 'service_account'
+    project_id: 'deductive-smile-428006-v6'
+    private_key_id: '32a3c7953f0950e519291cc251ba24b94617187c'
+    private_key: '-----BEGIN PRIVATE KEY-----\n...'
+    client_email: 'drive-api@deductive-smile-428006-v6.iam.gserviceaccount.com'
+    client_id: '110633217942673347222'
+    auth_uri: 'https://accounts.google.com/o/oauth2/auth'
+    token_uri: 'https://oauth2.googleapis.com/token'
+    auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs'
+    client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/drive-api@deductive-smile-428006-v6.iam.gserviceaccount.com'
+    universe_domain: 'googleapis.com'
+
+main_folder_id: '1RFTdV4WCu9o489_I4tkELAiRjEssCl2Q'
