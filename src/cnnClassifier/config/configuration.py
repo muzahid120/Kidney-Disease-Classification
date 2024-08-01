@@ -1,35 +1,22 @@
-from src.cnnClassifier.constants import *
+import yaml
+from pathlib import Path
 from src.cnnClassifier.entity.config_entity import DataIngestionConfig
-from src.cnnClassifier.utils.common import read_yaml,create_directories
-
-import os 
-
-
 
 class ConfigurationManager:
-    def __init__(self,
-                 config_file_path=CONFIG_FILE_PATH,
-                 params_file_path=PARAMS_FILE_PATH):
-        
-        self.config=config_file_path
-        self.params=params_file_path
+    def __init__(self, config_path):
+        self.config = self._load_yaml(config_path)
+    
+    def _load_yaml(self, path):
+        with open(path, 'r') as file:
+            return yaml.safe_load(file)
 
-        read_yaml(self.config,self.params)
-
-        create_directories([self.config.artifacts_root])
-    def get_data_ingestion_config(self) -> DataIngestionConfig:
-        config = self.config.data_ingestion
-
-        create_directories([config.root_dir])
-
-        data_ingestion_config = DataIngestionConfig(
-            root_dir=config.root_dir,
-            source_URL=config.source_URL,
-            local_data_file=config.local_data_file,
-            unzip_dir=config.unzip_dir 
+    def get_data_ingestion_config(self):
+        config = self.config.get('data_ingestion', {})
+        return DataIngestionConfig(
+            root_dir=Path(config.get('root_dir')),
+            source_url=config.get('source_url'),
+            local_data_file=Path(config.get('local_data_file')),
+            unzip_dir=Path(config.get('unzip_dir')),
+            credentials_info=self.config.get('google_drive', {}).get('credentials_info'),
+            main_folder_id=config.get('main_folder_id')
         )
-
-        return data_ingestion_config
-
-
-        

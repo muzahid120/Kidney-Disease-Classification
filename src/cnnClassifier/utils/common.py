@@ -32,12 +32,14 @@ def read_yaml (yaml_file_path:Path) -> ConfigBox:
     
 
 @ ensure_annotations
-def create_directories(path_to_directories:list,verbose=True ):
-   
-   for path in path_to_directories:
-      os.makedirs(path)
-      if verbose:
-         logging.info(f"create directory at :{path}")
+
+
+def create_directories(paths):
+    for path in paths:
+        try:
+            os.makedirs(path)
+        except FileExistsError:
+            pass  # Directory already exists
 
 @ensure_annotations
 def save_json(path:Path,data:dict):
